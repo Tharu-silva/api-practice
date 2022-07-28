@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+  <body>
+    x
+  </body>
+  <script>
+    // function loadJson(url) {
+    //   return fetch(url)
+    //     .then(response => {
+    //       if (response.status == 200) {
+    //         return response.json();
+    //       } else {
+    //         throw new Error(response.status);
+    //       }
+    //     });
+    // } 
+
+    async function loadJson(url) {
+      // try {
+        let response = await fetch(url, {mode: "cors"});
+        // let user = await response.json();
+        if (response.status == 200) {
+          return response.json()
+        } else {
+          console.log('error')
+        }
+        
+      // } catch (err) {
+      //   console.log('ddd');
+      // }
+      // finally {
+      //   console.log('finally')
+      // }
+    }
+//     }
+// //   async function loadJson(url) { // (1)
+// //     let response = await fetch(url); // (2)
+
+// //     if (response.status == 200) {
+// //       let json = await response.json(); // (3)
+// //       return json;
+// //     }
+
+// //     throw new Error(response.status);
+// // }
+
+    loadJson('https://api.com/v1//translate?api_key=yyWiavR3jXOxSkym4pdWVPNV4NrslYI&s=itachi')
+    // console.log(loadJson('https://api.giphy.com/v1//translate?api_key=yyWiavR3jXUOxSkym4pdWVPNV4NrslYI&s=itachi'))
+    // loadJson('/no-user-here')
+
+    // try {
+    //   nonExistentFunction();
+    // } catch (error) {
+    //   console.log(error);
+  // expected output: ReferenceError: nonExistentFunction is not defined
+  // Note - error messages will vary depending on browser
+  </script>
+</html>
